@@ -3,8 +3,6 @@ import random
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
-STATUS_CODE_1 = 200
-STATUS_CODE_2 = 404
 
 proxies = [
     # Use working proxies or the script won't work
@@ -54,7 +52,7 @@ def amazon_scraper():
         try:
             el =driver.find_element(By.XPATH, "//div[@class='a-section a-spacing-none aok-align-center aok-relative']//span[@class='a-price-whole']")
             elt = el.text
-            print(elt)
+            print('Product Available')
             
         except NoSuchElementException:
             # If the element is not found, then the product is not available
